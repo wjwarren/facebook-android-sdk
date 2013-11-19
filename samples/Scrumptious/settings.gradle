@@ -1,0 +1,2 @@
+include "FacebookSDK"
+project(":FacebookSDK").projectDir = new File("../../facebook")

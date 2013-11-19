@@ -17,5 +17,5 @@ facebook/tests/assets/config.json
 .idea/inspectionProfiles/
 
 # Gradle
-facebook/.gradle
-facebook/build
+.gradle
+build/

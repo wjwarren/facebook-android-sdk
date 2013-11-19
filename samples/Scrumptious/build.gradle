@@ -1,0 +1,43 @@
+buildscript {
+	repositories {
+		mavenCentral()
+	}
+	dependencies {
+		// Android Gradle plugin.
+		classpath "com.android.tools.build:gradle:0.6.1"
+	}
+}
+
+apply from: "../../build.gradle"
+apply plugin: "android"
+
+android {
+	compileSdkVersion androidCompileSdkVersion.toInteger()
+	buildToolsVersion androidBuildToolsVersion
+
+	defaultConfig {
+		minSdkVersion = androidMinSdkVersion.toInteger()
+		targetSdkVersion = androidTargetSdkVersion.toInteger()
+
+		versionCode = 1
+		versionName = "1.0"
+	}
+	
+	sourceSets {
+		main {
+			manifest {
+				srcFile "AndroidManifest.xml"
+			}
+			java {
+				srcDir "src"
+			}
+			res {
+				srcDir "res"
+			}
+		}
+	}
+
+	dependencies {
+		compile project(":FacebookSDK")
+	}
+}
